@@ -1,7 +1,7 @@
 
 'use strict';
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 let express = require('express');
 
@@ -18,6 +18,6 @@ express()
     next();
   })
   .use('/api', apiRouter)
-  .listen(process.env.PORT || 3000, () => {
+  .listen(process.env.PORT || 3001, () => {
     log.info(`Server is listening on http://localhost:${PORT}`);
   });
