@@ -30,10 +30,18 @@
   margin: 10px;
   color: white;
   border-radius: 2px;
+  width: 200px
+}
+
+@media only screen and (max-width: 600px) {
+  .user-square {
+    width: 95vw;
+    padding: 0 20px;
+  }
 }
 
 .profile-pic {
-  height: 200px;
+  width: 100%;
 }
 
 .about {
@@ -63,6 +71,12 @@
 
 .user-age {
   font-weight: bold;
+}
+
+.headline {
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: 4px;
 }
 
 .user-distance {
