@@ -21,3 +21,7 @@ This task was completed by creating a React app within the project and having it
     npm run
     ```
     and the front end will spin up. You can view it at `http://localhost:3000`
+
+## Acknowledgements
+
+Shout out to the designer of the trial task for providing the backend app.
