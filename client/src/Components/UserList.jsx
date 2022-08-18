@@ -1,23 +1,23 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import User from "./User"
+import { getUsers } from "../api.js"
 
 const UserList = () => {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        axios.get("/api/search", { params: { length: 1 } })
-            .then(res => {
-                setUsers(res.data.items)
+        getUsers()
+            .then(users => {
+                setUsers(users)
             })
-            .catch(err => console.log("ERROR: ", err))
+            .catch(err => console.log("ERROR: ", err)) //todo: error state
     }, [])
 
     return (
-        <ul>
+        <ul className="user-list">
             {users.map(user => {
-                return <li key={user.id}>
-                    {user.name}
-                </li>
+                return <User key={user.id} user={user} />
             })}
         </ul>
     );
