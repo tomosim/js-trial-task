@@ -10,10 +10,10 @@ const UsersOnPage = ({ setUserCount }) => {
 
     useEffect(() => {
         setUserCount(value)
-    }, [value])
+    }, [value, setUserCount])
 
     return <form id="num-users">
-        <label for="nums">Users on page:</label>
+        <label htmlFor="nums">Users on page:</label>
         <select name="nums" value={value} onChange={handleChange}>
             <option value="10">10</option>
             <option value="20">20</option>

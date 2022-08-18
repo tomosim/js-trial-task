@@ -8,7 +8,7 @@ This task was completed by creating a React app within the project and having it
     
     ```
     npm i
-    npm run
+    npm start
     ```
 3. in a seperate terminal, change directory to `/client` and install dependencies
 
@@ -18,7 +18,7 @@ This task was completed by creating a React app within the project and having it
     ```
 4.  finally, in `/client` run 
     ```
-    npm run
+    npm start
     ```
     and the front end will spin up. You can view it at `http://localhost:3000`
 
