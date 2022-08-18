@@ -18,6 +18,7 @@ const User = ({ user }) => {
                     <h2 className="user-name">{user.name}</h2>
                     {user.online_status === "ONLINE" ? <span>🟢</span> : <span>🔴</span>}
                 </span>
+                <i className="headline">{user.headline}</i>
                 <LastSeen date={user.last_login} />
                 <span className="user-info">
                     <h3 className="user-distance">{user.location.distance}m 📍</h3>
