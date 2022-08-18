@@ -26,10 +26,18 @@
   height: 200px;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user-info {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 4px;
   align-items: center;
+
   margin: 10px;
 }
 
@@ -54,4 +62,9 @@
 
 .seperator {
   margin: 0;
+}
+
+.last-seen {
+  justify-content: center;
+  font-size: 0.7em;
 }

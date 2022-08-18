@@ -1,3 +1,6 @@
+import LastSeen from "./LastSeen";
+
+
 const User = ({ user }) => {
     console.log(user)
     const genericPic = "https://stiftung-chancenfuerkinder.de/wp-content/uploads/2020/11/blank-profile-picture-973460_1280.png"
@@ -8,15 +11,18 @@ const User = ({ user }) => {
                     user.picture.url :
                     genericPic
             } alt="profile" />
-            <span className="user-info">
-                <h2 className="user-age">{user.personal.age}</h2>
-                <p className="seperator">|</p>
-                <h2 className="user-name">{user.name}</h2>
-                {user.online_status === "ONLINE" ? <span>🟢</span> : <span>🔴</span>}
-            </span>
-            <span className="user-info">
-                <h3 className="user-distance">{user.location.distance}m 📍</h3>
-            </span>
+            <div className="about">
+                <span className="user-info">
+                    <h2 className="user-age">{user.personal.age}</h2>
+                    <p className="seperator">|</p>
+                    <h2 className="user-name">{user.name}</h2>
+                    {user.online_status === "ONLINE" ? <span>🟢</span> : <span>🔴</span>}
+                </span>
+                <LastSeen date={user.last_login} />
+                <span className="user-info">
+                    <h3 className="user-distance">{user.location.distance}m 📍</h3>
+                </span>
+            </div>
         </li>
     );
 }

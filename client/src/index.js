@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TimeAgo from 'javascript-time-ago'
+
+import en from 'javascript-time-ago/locale/en.json'
+import de from 'javascript-time-ago/locale/de.json'
+
+TimeAgo.addDefaultLocale(en)
+TimeAgo.addLocale(de)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
