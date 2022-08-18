@@ -1,8 +1,8 @@
 import axios from "axios"
 import { groupUsers } from "./utils";
 
-const getUsers = () => {
-    return axios.get("/api/search", { params: { length: 10 } })
+const getUsers = (userCount) => {
+    return axios.get("/api/search", { params: { length: userCount } })
         .then(res => {
 
             let query = "?"
@@ -15,7 +15,7 @@ const getUsers = () => {
         })
         .then(([usersInfo, res]) => {
             const combinedData = groupUsers(usersInfo, res.data)
-            console.log(combinedData)
+
             return combinedData
         })
 }

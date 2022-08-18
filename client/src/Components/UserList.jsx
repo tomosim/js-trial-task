@@ -3,16 +3,16 @@ import React, { useState, useEffect } from "react";
 import User from "./User"
 import { getUsers } from "../api.js"
 
-const UserList = () => {
+const UserList = ({ userCount }) => {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        getUsers()
+        getUsers(userCount)
             .then(users => {
                 setUsers(users)
             })
             .catch(err => console.log("ERROR: ", err)) //todo: error state
-    }, [])
+    }, [userCount])
 
     return (
         <ul className="user-list">

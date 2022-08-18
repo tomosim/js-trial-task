@@ -2,7 +2,7 @@ import LastSeen from "./LastSeen";
 
 
 const User = ({ user }) => {
-    console.log(user)
+
     const genericPic = "https://stiftung-chancenfuerkinder.de/wp-content/uploads/2020/11/blank-profile-picture-973460_1280.png"
     return (
         <li className="user-square">
