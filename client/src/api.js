@@ -1,8 +1,8 @@
 import axios from "axios"
 import { groupUsers } from "./utils";
 
-const getUsers = (userCount) => {
-    return axios.get("/api/search", { params: { length: userCount } })
+const getUsers = (userCount, cursor = null) => {
+    return axios.get("/api/search", { params: { length: userCount, cursor: cursor } })
         .then(res => {
 
             let query = "?"
@@ -10,13 +10,14 @@ const getUsers = (userCount) => {
                 query = query + `ids=${user.id}&`
                 return user
             });
+            const after = res.data.cursors.after
 
-            return Promise.all([usersInfo, axios.get("/api/profiles" + query)])
+            return Promise.all([usersInfo, after,  axios.get("/api/profiles" + query)])
         })
-        .then(([usersInfo, res]) => {
+        .then(([usersInfo, after, res]) => {
             const combinedData = groupUsers(usersInfo, res.data)
 
-            return combinedData
+            return {users: combinedData, after: after}
         })
 }
 
